@@ -104,7 +104,7 @@ function gradlewClean() {
             return resolve();
         }
 
-        spawnChildProcess(gradlew, "-p", platformsPath, "clean")
+        spawnChildProcess(gradlew, "-p", escapeWithQuotes(platformsPath), "clean")
             .then(resolve)
             .catch(throwError);
     });
